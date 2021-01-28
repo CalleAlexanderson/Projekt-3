@@ -4,20 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/mainstyle.css">
-    <script src="addscripts.js"></script>
+    <script defer src="/javascript/addscripts.js"></script>
     <title>Document</title>
 </head>
 <body>
     <main>
         <div class="type-button">
-            <button onclick="dropdownFunction()">Type</button>
+            <button id="button1" onclick="dropdownFunction()">Type</button>
             <div id="type-menu" class="dropdown-content">
-                <label for=""><input type="radio" name="type" id="lightnovel" value="0">Lightnovel</label>
-                <label for=""><input type="radio" name="type" id="manga" value="1">Manga</label>
-                <label for=""><input type="radio" name="type" id="manwha" value="2">Manwha</label>
+                <label for=""><input type="radio" name="type" id="lightnovel" value="Lightnovel">Lightnovel</label>
+                <label for=""><input type="radio" name="type" id="manga" value="Manga">Manga</label>
+                <label for=""><input type="radio" name="type" id="manwha" value="Manwha">Manwha</label>
             </div>
         </div>
-        
     </main>
 </body>
 </html>

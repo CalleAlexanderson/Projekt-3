@@ -25,6 +25,10 @@ nav a:hover {
   color: #c7cbd8;
 }
 
+label {
+  color: black;
+}
+
 .addbutton {
   background-color: #1737a8;
   padding: 0.5rem 1rem;
