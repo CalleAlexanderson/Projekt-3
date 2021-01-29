@@ -9,14 +9,31 @@
 </head>
 <body>
     <main>
-        <div class="type-button">
-            <button id="button1" onclick="dropdownFunction()">Type</button>
+        <div class="button">
+            <button id="button1" onclick="dropdownFunction1()">Type</button>
             <div id="type-menu" class="dropdown-content">
-                <label for=""><input type="radio" name="type" id="lightnovel" value="Lightnovel">Lightnovel</label>
-                <label for=""><input type="radio" name="type" id="manga" value="Manga">Manga</label>
-                <label for=""><input type="radio" name="type" id="manwha" value="Manwha">Manwha</label>
+                <label><input type="radio" name="type" id="lightnovel" value="Lightnovel">Lightnovel</label>
+                <label><input type="radio" name="type" id="manga" value="Manga">Manga</label>
+                <label><input type="radio" name="type" id="manwha" value="Manwha">Manwha</label>
             </div>
         </div>
+        <form action="" id="score-menu">
+            <label> 
+            <select id="scores">
+                <option value="">Select a score</option>
+                <option value="10">10</option>
+                <option value="9">9</option>
+                <option value="8">8</option>
+                <option value="7">7</option>
+                <option value="6">6</option>
+                <option value="5">5</option>
+                <option value="4">4</option>
+                <option value="3">3</option>
+                <option value="2">2</option>
+                <option value="1">1</option>
+               </select>
+            </label>
+        </form>
     </main>
 </body>
 </html>
