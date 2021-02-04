@@ -9,31 +9,41 @@
 </head>
 <body>
     <main>
-        <div class="button">
-            <button id="button1" onclick="dropdownFunction1()">Type</button>
-            <div id="type-menu" class="dropdown-content">
-                <label><input type="radio" name="type" id="lightnovel" value="Lightnovel">Lightnovel</label>
-                <label><input type="radio" name="type" id="manga" value="Manga">Manga</label>
-                <label><input type="radio" name="type" id="manwha" value="Manwha">Manwha</label>
+        <div id="add-box">
+            <div class="button">
+                <button id="button1" onclick="dropdownFunction1()">Type</button>
+                <div id="type-menu" class="dropdown-content">
+                    <label><input type="radio" name="type" id="lightnovel" value="Lightnovel">Lightnovel</label>
+                    <label><input type="radio" name="type" id="manga" value="Manga">Manga</label>
+                    <label><input type="radio" name="type" id="manwha" value="Manwha">Manwha</label>
+                </div>
+            </div>
+            <form action="" id="score-menu">
+                <select id="scores">
+                    <option value="">Select a score</option>
+                    <option value="10">10</option>
+                    <option value="9">9</option>
+                    <option value="8">8</option>
+                    <option value="7">7</option>
+                    <option value="6">6</option>
+                    <option value="5">5</option>
+                    <option value="4">4</option>
+                    <option value="3">3</option>
+                    <option value="2">2</option>
+                    <option value="1">1</option>
+                </select>
+            </form>
+            <div>
+                <input type="text" name="chapters" id="chapters" placeholder="Chapters read">
+            </div>
+            <div>
+                <input type="text" name="media-title" id="media-title" placeholder="Title">
+            </div>
+            <div> 
+                <label for="">Completed</label>
+                <input type="checkbox" id="complete-box">
             </div>
         </div>
-        <form action="" id="score-menu">
-            <label> 
-            <select id="scores">
-                <option value="">Select a score</option>
-                <option value="10">10</option>
-                <option value="9">9</option>
-                <option value="8">8</option>
-                <option value="7">7</option>
-                <option value="6">6</option>
-                <option value="5">5</option>
-                <option value="4">4</option>
-                <option value="3">3</option>
-                <option value="2">2</option>
-                <option value="1">1</option>
-               </select>
-            </label>
-        </form>
     </main>
 </body>
 </html>
