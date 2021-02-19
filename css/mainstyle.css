@@ -26,10 +26,14 @@ nav a:hover {
 }
 
 label {
-  color: black;
+  color: aliceblue;
 }
 
-#add-box {
+.add-box{
+  display: block;
+  border: solid black 2px;
+  background-color: #1737a8;
+  margin: 1rem;
 }
 
 .addbutton {
@@ -41,8 +45,8 @@ label {
 }
 
 .button {
-  background-color: #1737a8;
-  color: aliceblue;
+  background-color: aliceblue;
+  color: black;
 }
 
 .dropdown {
@@ -58,3 +62,41 @@ label {
 .show {
   display: block;
 }
+
+.list-body{
+  display: grid;
+  grid-template-columns: 10vw 80vw 10vw;
+  grid-template-rows: 7vh 80vh 10vh;
+}
+
+.list-item{
+  display: block;
+  max-width: 88vw;
+  margin-top: 0.5rem;
+  border: solid 0.225rem black;
+  background-color: aliceblue;
+  margin-left: 1vw;
+  margin-right: 1vw;
+}
+
+.list{
+  display: grid;
+  grid-template-columns: 1fr;
+  overflow-y: scroll;
+  background-color: #1737a8;
+  max-height: 100vh;
+}
+
+.list-info{
+  border-left: solid black;
+}
+
+.list-desc{
+  border-right: solid black;
+}
+
+.list-header{
+  grid-column: 1/4;
+  border-bottom: solid black;
+}
+

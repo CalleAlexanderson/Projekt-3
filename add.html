@@ -5,21 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/mainstyle.css">
     <script defer src="/javascript/addscripts.js"></script>
-    <title>Document</title>
+    <title>Add</title>
 </head>
 <body>
     <main>
-        <div id="add-box">
-            <div class="button">
-                <button id="button1" onclick="dropdownFunction1()">Type</button>
+        <div class="add-box">
+            <div>
+                <button id="button1" class="button" onclick="dropdownFunction1()">Type</button>
                 <div id="type-menu" class="dropdown-content">
                     <label><input type="radio" name="type" id="lightnovel" value="Lightnovel">Lightnovel</label>
                     <label><input type="radio" name="type" id="manga" value="Manga">Manga</label>
                     <label><input type="radio" name="type" id="manwha" value="Manwha">Manwha</label>
                 </div>
             </div>
-            <form action="" id="score-menu">
-                <select id="scores">
+            <form class="add-form">
+                <select class="button" id="scores">
                     <option value="">Select a score</option>
                     <option value="10">10</option>
                     <option value="9">9</option>
@@ -32,17 +32,18 @@
                     <option value="2">2</option>
                     <option value="1">1</option>
                 </select>
+                <div>
+                    <input type="text" name="chapters" class="button" id="chapters" placeholder="Chapters read">
+                </div>
+                <div>
+                    <input type="text" name="media-title" class="button" id="media-title" placeholder="Title">
+                </div>
+                <div> 
+                    <label for="" class="button">Completed</label>
+                    <input type="checkbox" id="complete-box">
+                </div>
+                <button></button>
             </form>
-            <div>
-                <input type="text" name="chapters" id="chapters" placeholder="Chapters read">
-            </div>
-            <div>
-                <input type="text" name="media-title" id="media-title" placeholder="Title">
-            </div>
-            <div> 
-                <label for="">Completed</label>
-                <input type="checkbox" id="complete-box">
-            </div>
         </div>
     </main>
 </body>

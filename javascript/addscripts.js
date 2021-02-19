@@ -29,9 +29,7 @@ function selectDifferentMedia(e){
   button.innerHTML = currentlySelcetedMedia;
 }
 
-
-
-
-function addToList(){
-  mediaList.push(mediaName);
-}
+document.querySelector(".add-form").addEventListener("submit", (e) => {
+  e.preventDefault();
+  console.log("hej");
+})
