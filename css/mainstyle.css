@@ -12,6 +12,10 @@ h1 {
   color: aliceblue;
 }
 
+a {
+  text-decoration: none;
+}
+
 nav {
   background-color: #1737a8;
 }
