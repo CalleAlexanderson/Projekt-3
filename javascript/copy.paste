@@ -1,0 +1,7 @@
+
+  if(currentlySelectedMedia === "Manwha"){
+    document.querySelector(".manwha-list").append(mediaList);
+  } else if(currentlySelectedMedia === "Manga") {
+    document.querySelector(".manga-list").append(mediaList);
+  } else if(currentlySelectedMedia === "Lightnovel"){
+    document.querySelector(".ln-list").append(mediaList); 
