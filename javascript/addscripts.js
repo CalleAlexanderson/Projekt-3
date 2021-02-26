@@ -1,22 +1,29 @@
 "using strict";
 
+const MEDIA_ITEMS_KEY = "app.mediaItem";
 
 
-let currentlySelectedMedia;
 //hittar alla radio på sidan
 let choices = document.querySelectorAll("input[type='radio']");
 let button = document.querySelector("#button1");
-let currentlySelectedChapters = document.getElementById("chpaters");
-let currentlySelectedScore = document.getElementById("scores");
-let currentlySelectedComplete = document.getElementById("complete-box");
-let currentlySelectedMediaName = document.getElementById("media-title");
+let currentlySelectedChapters = document.querySelector("#chapters");
+let currentlySelectedScore = document.querySelector("#scores");
+let currentlySelectedComplete = document.querySelector("#complete-box");
+let currentlySelectedMediaName = document.querySelector("#media-title");
+let currentlySelectedMedia = button;
 let mediaList = [];
 
+document.querySelector("#button1").addEventListener("click", dropdownFunction1);
 //visar min dropdown meny när jag klickar på knappen
 function dropdownFunction1() {
-  document.getElementById("type-menu").classList.toggle("show");
+  document.querySelector("#type-menu").classList.toggle("show");
 }
 
+console.log(currentlySelectedChapters);
+console.log(currentlySelectedMedia);
+console.log(currentlySelectedMediaName);
+console.log(currentlySelectedScore);
+console.log(currentlySelectedComplete);
 //gör ett event när man klickar i en radio
 choices.forEach((choice) => {
   choice.addEventListener("click", selectDifferentMedia);
@@ -28,50 +35,64 @@ function selectDifferentMedia(e){
   button.innerHTML = currentlySelectedMedia;
 }
 
-function createMediaItem(currentlySelectedMediaName, currentlySelectedScore, currentlySelectedMedia, currentlySelectedChapters, currentlySelectedComplete) {
+document.querySelector(".add-form").addEventListener("submit", (e) => {
+  e.preventDefault();
+  let newMediaItem = createMediaItem(currentlySelectedMediaName.value, currentlySelectedMedia.value, currentlySelectedScore.value, currentlySelectedChapters.value, currentlySelectedComplete.checked)
+  console.log(newMediaItem);
+});
+
+function createMediaItem(name, score, media, chapters, complete) {
   return {
-      id: new Date().now().toString(),
-      currentlySelectedMediaName: currentlySelectedMediaName,
-      currentlySelectedScore: currentlySelectedScore,
-      currentlySelectedMedia: currentlySelectedMedia,
-      currentlySelectedChapters: currentlySelectedChapters,
-      currentlySelectedComplete: currentlySelectedComplete
+      id: Date.now().toString(),
+      name,
+      score,
+      media,
+      chapters,
+      complete
   };
 }
 
-function generateMediaItemHTML(currenlySelectedComplete, currentlySelectedMediaName, currentlySelectedScore, currentlySelectedMedia, currentlySelectedChapters) {
+function generateMediaItemHTML(currentlySelectedComplete, currentlySelectedMediaName, currentlySelectedScore, currentlySelectedMedia, currentlySelectedChapters) {
   let mediaList = document.createElement("div");
 
   mediaList.classList.add("list.item");
-  if (currenlySelectedComplete === true) {
+  if (currentlySelectedComplete === true) {
       mediaList.classList.add("completed");
   } else {
       mediaList.classList.add("incomplete");
   }
 
-  let currentlySelectedMediaName = createElement("h2");
+  currentlySelectedMediaName = createElement("h2");
   currentlySelectedMediaName.innerHTML = currentlySelectedMediaName;
   mediaList.append(currentlySelectedMediaName);
 
-  let currentlySelectedScore = createElement("p");
+  currentlySelectedScore = createElement("p");
   currentlySelectedScore.innerHTML = currentlySelectedScore;
   mediaList.append(currentlySelectedScore);
 
-  let currentlySelectedMedia = createElement("p");
+  currentlySelectedMedia = createElement("p");
   currentlySelectedMedia.innerHTML = currentlySelectedMedia;
   mediaList.append(currentlySelectedMedia);
 
-  let currentlySelectedChapters = createElement("p");
+  currentlySelectedChapters = createElement("p");
   currentlySelectedChapters.innerHTML = currentlySelectedChapters;
   mediaList.append(currentlySelectedChapters);
 
-  document.querySelector(".list").append(mediaList);
+  document.querySelector(".full-list").append(mediaList);
+
+  if(currentlySelectedMedia === "Manwha"){
+    document.querySelector(".manwha-list").append(mediaList);
+  } else if(currentlySelectedMedia === "Manga") {
+    document.querySelector(".manga-list").append(mediaList);
+  } else if(currentlySelectedMedia === "Lightnovel"){
+    document.querySelector(".ln-list").append(mediaList);
+  }
 }
 
 function updateList() {
   document.querySelector(".list").innerHTML = "";
   mediaList.forEach((item) => {
-      createLink(item.href, item.linkText, item.isSpecial);
+      createMediaItem(item.currentlySelectedMediaName, item.currentlySelectedScore, item.currentlySelectedChapters, currentlySelectedComplete);
   });
 }
 
