@@ -36,7 +36,7 @@ document.querySelector(".add-form").addEventListener("submit", (e) => {
   mediaList.push(newMediaItem);
   console.log(newMediaItem);
   console.log(mediaList);
-  generateMediaItemHTML(mediaList);
+  generateMediaItemHTML(mediaList, newMediaItem);
 });
 
 function createMediaItem(name, score, media, chapters, complete) {
@@ -50,20 +50,19 @@ function createMediaItem(name, score, media, chapters, complete) {
   };
 }
 
-function generateMediaItemHTML(items) {
-  let mediaList = document.querySelector("full-list");
-
-  items.forEach((newMediaItem) => {
-    
+function generateMediaItemHTML(list, items) {
+  let listItem = [];
+  list.forEach((items) => {
+    console.log(items);
+    document.querySelector(".full-list").innerHTML = "";
+    document.querySelector(".full-list").append("name: " + items.name + ", chapters: " + items.chapters);
   });
-
-  document.querySelector(".full-list").append(mediaList);
 }
 
-function updateList() {
+/*function updateList() {
   document.querySelector(".full-list").innerHTML = "";
   mediaList.forEach((item) => {
-      generateMediaItemHTML(item.currentlySelectedMediaName, item.currentlySelectedScore, item.currentlySelectedChapters, currentlySelectedComplete);
+      generateMediaItemHTML(mediaList);
   });
-}
+} */
 
