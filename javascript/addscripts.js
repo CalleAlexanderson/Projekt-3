@@ -51,11 +51,15 @@ function createMediaItem(name, score, media, chapters, complete) {
 }
 
 function generateMediaItemHTML(list, items) {
-  let listItem = [];
   list.forEach((items) => {
     console.log(items);
+    let item = [];
+    item = document.createElement("div");
+    item.classList.add("list-item");
+    let itemName = items.name;
+    itemName = document.createElement("h2");
     document.querySelector(".full-list").innerHTML = "";
-    document.querySelector(".full-list").append("name: " + items.name + ", chapters: " + items.chapters);
+    document.querySelector(".full-list").append(item);
   });
 }
 

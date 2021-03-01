@@ -34,10 +34,38 @@ label {
 }
 
 .add-box{
-  display: block;
   border: solid black 2px;
   background-color: #1737a8;
   margin: 1rem;
+}
+
+.add-form{
+  display: grid;
+  grid-template-columns: 12rem 10rem 5rem 10rem 12rem; 
+  grid-template-rows: 3rem 3rem 1.5rem;
+}
+
+.add-button{
+  grid-row: 3/4;
+  grid-column: 3/4; 
+}
+
+.scores{
+  grid-column-start: 1;
+  grid-row-start: 3;
+}
+
+.complete{
+  grid-column-start: 5;
+}
+
+.chapters{
+  grid-column-start: 5;
+  grid-row-start: 2;
+}
+
+#media-title{
+  grid-row: 2/3;
 }
 
 .addbutton {
@@ -60,7 +88,6 @@ label {
 
 .dropdown-content {
   display: none;
-  position: absolute;
 }
 
 .show {
@@ -70,7 +97,7 @@ label {
 .list-body{
   display: grid;
   grid-template-columns: 10vw 80vw 10vw;
-  grid-template-rows: 7vh 80vh 10vh;
+  grid-template-rows: 7vh 83vh 10vh;
 }
 
 .list-item{
@@ -103,4 +130,13 @@ label {
   grid-column: 1/4;
   border-bottom: solid black;
 }
+
+.list-footer{
+  grid-column: 1/4;
+  grid-row: 3;
+  border-top: solid black;
+  background-color: #1737a8;
+}
+
+
 
