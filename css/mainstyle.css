@@ -108,6 +108,8 @@ label {
   background-color: aliceblue;
   margin-left: 1vw;
   margin-right: 1vw;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
 }
 
 .list{
@@ -136,6 +138,10 @@ label {
   grid-row: 3;
   border-top: solid black;
   background-color: #1737a8;
+}
+
+.completed{
+  border: solid #006400;
 }
 
 
